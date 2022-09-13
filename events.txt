@@ -1,3 +1,4 @@
-Birthday,01/01/23
-Begin final assignment,01/11/23
-Hand in final assigment,15/11/23
+Birthday,21/01/23
+Begin final assignment,01/11/22
+Hand in final assigment,15/11/22
+Nieuwjaar,01/01/23
