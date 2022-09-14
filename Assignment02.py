@@ -34,7 +34,7 @@ canvas = Canvas (root, height= 300, width= 300)
 canvas.pack()
 for event in events:
     dagen= days_between_dates(event[1], today)
-    canvas.create_text(5, 5+y, anchor= "nw", text= (event[0], "nog", dagen, "dagen"))
+    canvas.create_text(5, 5+y, anchor= "nw", text= event[0] + " nog " + dagen + " dagen")
     y=y+15
 
 
