@@ -26,7 +26,6 @@ events = get_events()
 today = date.today()
 
 for event in events:
-    event_name = event[0]
     days_until = days_between_dates(event[1], today)
     print()
 
