@@ -1,6 +1,11 @@
 from datetime import date, datetime
 from tkinter import *
 
+root = Tk()
+root.title("assignment02")
+
+y=0
+
 def get_events():
     list_events = []
     with open ("events.txt", "rt") as file:
@@ -23,4 +28,15 @@ today = date.today()
 for event in events:
     event_name = event[0]
     days_until = days_between_dates(event[1], today)
-    print(event_name, "nog", days_until, "dagen")
+    print()
+
+
+canvas = Canvas (root, height= 300, width= 300)
+canvas.pack()
+for event in events:
+    dagen= days_between_dates(event[1], today)
+    canvas.create_text(5, 5+y, anchor= "nw", text= (event[0], "nog", dagen, "dagen"))
+    y=y+15
+
+
+root.mainloop()
