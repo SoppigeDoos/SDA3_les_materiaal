@@ -1,3 +1,4 @@
+from cgi import test
 from tkinter import *
 
 root = Tk()
@@ -12,20 +13,21 @@ def get_steden():
             list_steden.append(current_stad)
     return list_steden
 
-def compare():
-
-def cancel():
-
-
 steden = get_steden()
-for stad in steden:
-    print(stad[0])
+
+
+def print():
+    
+    l2 = Label(root, text= "is de hoofstad van")
+    l2.grid(row=3, column=0)
+
+
 
 l1 = Label(root, text= "Type the name of a country?")
-e1 = Entry(root)
-b1 = Button(text= "OK", width= 6, command= Compare)
-b2 = Button(text= "Cancel", width = 6, command= cancel)
 
+e1 = Entry(root)
+b1 = Button(text= "OK", width= 6, command= print)
+b2 = Button(text= "Cancel", width = 6)
 
 l1.grid(row=0,column=0)
 e1.grid(row=1,column=0)
