@@ -1,5 +1,5 @@
 import threading
-import DoBotArm as Dbt
+from DoBotArm import *
 import time
 from serial.tools import list_ports
 
@@ -32,8 +32,7 @@ def main():
     homeX, homeY, homeZ = 200, 0, 50
     print("Connecting")
     print("Homing")
-    ctrlBot = Dbt.DoBotArm(port, homeX, homeY, homeZ, home = True) #Create DoBot Class Object with home position x,y,z
-
+    ctrlBot = DoBotArm(port, homeX, homeY, homeZ, home = True) #Create DoBot Class Object with home position x,y,z
     print("Disconnecting")
 
 if __name__ == "__main__":
