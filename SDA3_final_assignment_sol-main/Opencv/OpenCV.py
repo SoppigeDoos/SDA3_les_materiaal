@@ -11,8 +11,8 @@ while True:
    ret, img = cap.read()
    
    RGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-   lower_blue = np.array([100, 128, 20])
-   upper_blue = np.array([230, 255, 90])
+   lower_blue = np.array([40, 100, 100])
+   upper_blue = np.array([90, 160, 255])
    mask =cv2.inRange(RGB, lower_blue, upper_blue)
 
    thresh, image_edges = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)
