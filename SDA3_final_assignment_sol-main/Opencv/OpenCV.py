@@ -5,15 +5,16 @@ from cv2 import drawContours
 from cv2 import CHAIN_APPROX_NONE
 import numpy as np
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
+screens = 0
 
-while True:
+while screens < 6:
    ret, img = cap.read()
    
    RGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-   lower_blue = np.array([40, 100, 100])
-   upper_blue = np.array([90, 160, 255])
-   mask =cv2.inRange(RGB, lower_blue, upper_blue)
+   lower_red = np.array([128, 53, 50])
+   upper_red = np.array([255, 123, 100])
+   mask =cv2.inRange(RGB, lower_red, upper_red)
 
    thresh, image_edges = cv2.threshold(mask, 127, 255, cv2.THRESH_BINARY)
    
@@ -30,6 +31,10 @@ while True:
    cv2.circle(img, (cX, cY), 5, (255, 255, 255), -1)
    
    cv2.imshow('image', img)
+   
+   screens = screens +1
+   print(cX, "\n")
+   print(cY, "\n")
    
    key = cv2.waitKey(1)
    if key == ord('q'):
